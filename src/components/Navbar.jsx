@@ -10,11 +10,27 @@ const Navbar = () => {
         setActiveItem(itemName);
       };
 
-                         
+      const [isNavActive, setNavActive] = useState(false);
+      const [isDropdownActive, setDropdownActive] = useState(Array(3).fill(false)); // Adjust based on number of dropdowns
+    
+      // Toggle hamburger menu and navbar
+      const toggleNavbar = () => {
+        setNavActive(!isNavActive);
+      };
+    
+      // Toggle dropdown
+      const toggleDropdown = (index) => {
+        setDropdownActive((prev) => {
+          const newDropdowns = [...prev];
+          newDropdowns[index] = !newDropdowns[index];
+          return newDropdowns;
+        });
+      };
+                                               
 
   return (
    <>
-   <header id="cs-navigation">
+   <header id="cs-navigation" className={`navbar ${isNavActive ? 'cs-active' : ''}`}>
   <div className="cs-container">
      
     <a href="" className="cs-logo" aria-label="back to home">
@@ -22,7 +38,9 @@ const Navbar = () => {
     </a>
       <nav className="cs-nav" role="navigation">
           
-          <button className="cs-toggle" aria-label="mobile menu toggle">
+          <button  className={`cs-toggle ${isNavActive ? 'cs-active' : ''}`}
+          onClick={toggleNavbar}
+          aria-expanded={isNavActive} aria-label="mobile menu toggle">
               <div className="cs-box" aria-hidden="true">
                   <span className="cs-line cs-line1" aria-hidden="true"></span>
                   <span className="cs-line cs-line2" aria-hidden="true"></span>
@@ -31,7 +49,7 @@ const Navbar = () => {
           </button>
          
           <div className="cs-ul-wrapper">
-              <ul id="cs-expanded" className="cs-ul" aria-expanded="false">
+              <ul id="cs-expanded" className="cs-ul" aria-expanded={isNavActive}>
                   <li className="cs-li">
                       <a href="#gallery-1716" className={`cs-li-link ${activeItem === 'home' ? 'cs-active' : ''}`} onClick={() => handleItemClick('home')}>
                           Home

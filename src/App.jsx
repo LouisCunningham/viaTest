@@ -12,7 +12,7 @@ function App() {
 
 
   return (
-    <>
+    <div >
      <Navbar />
      <Hero />
      <About />
@@ -21,7 +21,7 @@ function App() {
      <Features />
      <Contact />
      <Footer />
-    </>
+    </div>
   )
 }
 
