@@ -61,7 +61,7 @@ const Navbar = () => {
                       </a>
                   </li>
                   <li className="cs-li">
-                      <a href="#services-1666" className={`cs-li-link ${activeItem === 'training' ? 'cs-active' : ''}`} onClick={() => handleItemClick('training')}>
+                      <a href="#training" className={`cs-li-link ${activeItem === 'training' ? 'cs-active' : ''}`} onClick={() => handleItemClick('training')}>
                           Training
                       </a>
                   </li>

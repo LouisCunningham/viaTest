@@ -43,7 +43,7 @@ const Services = () => {
             />
           </div>
           <div className="cs-content">
-            <span className="cs-topper">Our Training</span>
+            <span className="cs-topper" id="training">Our Training</span>
             <h2 className="cs-title">
               Elevate Your ITSM Skills with Our Comprehensive Training
             </h2>
@@ -138,7 +138,7 @@ const Services = () => {
                     height="32"
                   />
                   <span className="cs-button-text">
-                    Onsite ClassNameroom Training
+                    Onsite Classroom Training
                   </span>
                   <span className="cs-indicator" aria-hidden="true"></span>
                 </button>
